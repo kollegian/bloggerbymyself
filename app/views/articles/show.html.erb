@@ -1,0 +1,21 @@
+<style>
+#article_header {
+    color: blue;
+}
+</style>
+
+<h1 id="article_header">Here is an awesome article for you.</h1>
+<%=@article.title%><br/>
+
+<%=@article.body%><br/>
+
+<%=link_to "Back to Articles", articles_path%><br/>
+<%=link_to "Edit", edit_article_path%>
+<%=link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are You Sure?"} %>
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+

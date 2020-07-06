@@ -1,0 +1,12 @@
+<h1>Here is all the tags you can browse</h1>
+<ul>
+<%@tags.each do |tag|%>
+<li><%=tag.name%></li>
+  <ol>
+  <%tag.articles.each do |article|%>
+  <li><%=link_to article.title, article_path(article)%></li>
+  <%end%>
+  </ol>
+<%end%>
+</ul>
+

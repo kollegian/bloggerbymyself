@@ -1,0 +1,8 @@
+<h1>Welcome to the Heaven of Articles</h1>
+<ol>
+    <%@articles.each do |art|%>
+    <li><%=link_to art.title, article_path(art)%></li>
+    <%end%>
+</ol>
+<%=link_to "Create articles here", new_article_path%>
+<%=link_to "Browse through tags here", tags_path%>
